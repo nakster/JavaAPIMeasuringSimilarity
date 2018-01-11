@@ -2,7 +2,7 @@ package ie.gmit.sw;
 /**
  * This is a object shingle class
  * 
- * @author naqia
+ * @author Naqi Ahmad
  *
  */
 public class Shingle {
