@@ -105,7 +105,7 @@ public class Consumer implements Runnable {
 		//the calculation which calculates the percentage 
 		float jack = (float)intersection.size()/(numOfMinH*2-(float)intersection.size());
 		//displays the result
-		System.out.println("\nIt Matches: " + (jack) * 100 + " %");	
+		System.out.println("\nDoc 1 and Doc 2 Matches: " + (jack) * 100 + " %");	
 
 	}
 
