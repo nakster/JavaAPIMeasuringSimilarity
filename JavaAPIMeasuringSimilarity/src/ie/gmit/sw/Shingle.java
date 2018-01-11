@@ -1,15 +1,26 @@
 package ie.gmit.sw;
-
+/**
+ * 
+ * @author naqia
+ *
+ */
 public class Shingle {
 	//variables 
 	private int docId;
 	private int hashCode;
 	
 	//Constructors 
+	/**
+	 * empty constructor 
+	 */
 	public Shingle() {
 		super();
 	}
-
+	/**
+	 * constructor that takes in two paramameters 
+	 * @param docId
+	 * @param hashCode
+	 */
 	public Shingle(int docId, int hashCode) {
 		super();
 		this.docId = docId;

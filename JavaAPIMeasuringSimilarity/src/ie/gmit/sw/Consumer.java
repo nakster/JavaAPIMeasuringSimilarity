@@ -9,8 +9,16 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
 import ie.gmit.sw.Poison;
 
+/**
+ * this is a consumer class it does something
+ * 
+ * 
+ *
+ */
 public class Consumer implements Runnable {
 
 	private BlockingQueue<Shingle> bQueue;
@@ -20,10 +28,20 @@ public class Consumer implements Runnable {
 	private ExecutorService pool;
 
 	//gets Map
+	/**
+	 * 
+	 * @return returns values of the ConcurrentMap
+	 */	
 	public ConcurrentMap<Integer, List<Integer>> getMap() {
 		return map;
 	}
 	//constructor 
+	/**
+	 * 
+	 * @param bQueue
+	 * @param numOfMinH
+	 * @param poolSize
+	 */
 	public Consumer(BlockingQueue<Shingle> bQueue, int numOfMinH, int poolSize) {
 		this.bQueue = bQueue;
 		this.numOfMinH = numOfMinH;
@@ -31,6 +49,9 @@ public class Consumer implements Runnable {
 		init();
 	}
 	//Initializes specified number of min-hashes 
+	/**
+	 * this method initializes the minhash array randomly 
+	 */
 	public void init() {
 		Random random = new Random();
 		minhashes = new int[numOfMinH];
@@ -38,7 +59,10 @@ public class Consumer implements Runnable {
 			minhashes[i] = random.nextInt();
 		}
 	}
-
+	/**
+	 * run method implements Runnable 
+	 * 
+	 */
 	public void run() {
 		int docCount = 2;
 		while(docCount > 0) {
@@ -76,12 +100,25 @@ public class Consumer implements Runnable {
 			}
 
 		}
-
+		
+		pool.shutdown();
+		try {
+			pool.awaitTermination(Long.MAX_VALUE, TimeUnit.MINUTES);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		
 		List<Integer> intersection = map.get(1);
 		intersection.retainAll(map.get(2));
 		//the calculation which calculates the percentage 
 		float jacquared = (float)intersection.size()/(numOfMinH*2-(float)intersection.size());
 		//displays the result
 		System.out.println("\nIt Matches: " + (jacquared) * 100 + " %");
+
+
+		
+
 	}
+
 }

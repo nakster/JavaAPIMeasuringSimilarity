@@ -19,11 +19,10 @@ public class FileParser implements Runnable{
 	private Deque<String> buffer = new LinkedList<>();
 	
 	//constructor 
-	public FileParser(String file, int shingleSize, int numOfMin, BlockingQueue<Shingle> queue,int docId) {
+	public FileParser(String file, int shingleSize,BlockingQueue<Shingle> queue,int docId) {
 		super();
 		this.fileName = file;
 		this.sizeOfShingle = shingleSize;
-		this.numOfMin = numOfMin;
 		this.queue = queue;
 		this.docId = docId;
 	}

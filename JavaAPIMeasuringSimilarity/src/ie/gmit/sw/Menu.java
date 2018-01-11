@@ -2,12 +2,21 @@ package ie.gmit.sw;
 
 import java.util.Scanner;
 
+/**
+ * 
+ * @author Naqi Ahmad
+ *
+ */
 public class Menu {
 	
 	Launch l = new Launch();
 	
 	private Scanner console = new Scanner(System.in);
 	
+	/**
+	 * Menu asks the user for the values and sends the values to the Launcher class
+	 * @throws InterruptedException
+	 */
 	public Menu() throws InterruptedException {
 		
 			//ask the user following questions 
@@ -27,8 +36,7 @@ public class Menu {
 			int pool = console.nextInt();
 			
 			//send the info to the launch class which then runs the threads 			
-			l.StartThreads(f1, f2, shingleSize, NumOfMin, pool);
-		
+			l.StartThreads(f1, f2, shingleSize, NumOfMin, pool);	
 		
 	}
 	
