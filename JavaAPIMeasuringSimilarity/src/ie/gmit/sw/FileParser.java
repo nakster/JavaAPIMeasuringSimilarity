@@ -13,6 +13,7 @@ public class FileParser implements Runnable{
 	private String fileName;
 	private int sizeOfShingle;
 	private int docId;
+	@SuppressWarnings("unused")
 	private int numOfMin;//number of Min hashes
 	private BlockingQueue<Shingle> queue;
 	private Deque<String> buffer = new LinkedList<>();
