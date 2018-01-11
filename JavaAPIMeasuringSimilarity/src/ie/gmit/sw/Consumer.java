@@ -82,6 +82,6 @@ public class Consumer implements Runnable {
 		//the calculation which calculates the percentage 
 		float jacquared = (float)intersection.size()/(numOfMinH*2-(float)intersection.size());
 		//displays the result
-		System.out.println("It Matches: " + (jacquared) * 100 + " %");
+		System.out.println("\nIt Matches: " + (jacquared) * 100 + " %");
 	}
 }
