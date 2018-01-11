@@ -1,9 +1,13 @@
+* Github Download Link ====== https://github.com/nakster/JavaAPIMeasuringSimilarity.git
+* GitHub Link =============== https://github.com/nakster/JavaAPIMeasuringSimilarity
+
 The Project is a Java Api for Measuring Document similarity 
 
 There is A jar file included in this project To run the Jar Do the following 
-	* java –cp ./oop.jar ie.gmit.sw.Runner 
-	* or ....
-	* Java -jar ./oop.jar
+	* Go into CMD and go to the folder where the jar while is and run the following command
+		* java –cp ./oop.jar ie.gmit.sw.Runner 
+		* or ....
+		* Java -jar ./oop.jar
 
 There are seven files in the program 
 
@@ -32,4 +36,5 @@ Poison.java
 	* Extends Shingle.java
 
 JavaDocs are also included.
+The UML is also included which explains the relationships between the api
 
