@@ -3,9 +3,11 @@ package ie.gmit.sw;
 import java.util.Scanner;
 
 /**
- * 
- * @author Naqi Ahmad
+ * This is the Menu class that asks the user the Info needed to run the program
  *
+ * @author  Naqi Ahmad
+ * @version 1.0
+ * @since   2018-01-11
  */
 public class Menu {
 	
@@ -15,7 +17,7 @@ public class Menu {
 	
 	/**
 	 * Menu asks the user for the values and sends the values to the Launcher class
-	 * @throws InterruptedException
+	 * @throws InterruptedException thrown when a thread is waiting or sleeping
 	 */
 	public Menu() throws InterruptedException {
 		

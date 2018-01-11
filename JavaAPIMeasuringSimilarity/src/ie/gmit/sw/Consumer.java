@@ -14,9 +14,9 @@ import java.util.concurrent.TimeUnit;
 import ie.gmit.sw.Poison;
 
 /**
- * this is a consumer class it does something
+ * This is a consumer class This gets the Random Minhashes from the shingles 
  * 
- * 
+ * @author Naqi Ahmad
  *
  */
 public class Consumer implements Runnable {
@@ -27,20 +27,12 @@ public class Consumer implements Runnable {
 	private ConcurrentMap<Integer,List<Integer>> map = new ConcurrentHashMap<Integer, List<Integer>>();
 	private ExecutorService pool;
 
-	//gets Map
-	/**
-	 * 
-	 * @return returns values of the ConcurrentMap
-	 */	
-	public ConcurrentMap<Integer, List<Integer>> getMap() {
-		return map;
-	}
 	//constructor 
 	/**
 	 * 
-	 * @param bQueue
-	 * @param numOfMinH
-	 * @param poolSize
+	 * @param bQueue is a BlockingQueue 
+	 * @param numOfMinH int which is the size of the minhashes 
+	 * @param poolSize size of the threads 
 	 */
 	public Consumer(BlockingQueue<Shingle> bQueue, int numOfMinH, int poolSize) {
 		this.bQueue = bQueue;
@@ -50,7 +42,7 @@ public class Consumer implements Runnable {
 	}
 	//Initializes specified number of min-hashes 
 	/**
-	 * this method initializes the minhash array randomly 
+	 * this method initializes the min-hash array randomly 
 	 */
 	public void init() {
 		Random random = new Random();
@@ -60,7 +52,7 @@ public class Consumer implements Runnable {
 		}
 	}
 	/**
-	 * run method implements Runnable 
+	 * run method implements Runnable gets the minimum minhash value 
 	 * 
 	 */
 	public void run() {
@@ -108,16 +100,12 @@ public class Consumer implements Runnable {
 			e.printStackTrace();
 		}
 		
-		
 		List<Integer> intersection = map.get(1);
 		intersection.retainAll(map.get(2));
 		//the calculation which calculates the percentage 
 		float jacquared = (float)intersection.size()/(numOfMinH*2-(float)intersection.size());
 		//displays the result
-		System.out.println("\nIt Matches: " + (jacquared) * 100 + " %");
-
-
-		
+		System.out.println("\nIt Matches: " + (jacquared) * 100 + " %");	
 
 	}
 
