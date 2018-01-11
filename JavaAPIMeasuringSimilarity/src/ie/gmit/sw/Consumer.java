@@ -103,9 +103,9 @@ public class Consumer implements Runnable {
 		List<Integer> intersection = map.get(1);
 		intersection.retainAll(map.get(2));
 		//the calculation which calculates the percentage 
-		float jacquared = (float)intersection.size()/(numOfMinH*2-(float)intersection.size());
+		float jack = (float)intersection.size()/(numOfMinH*2-(float)intersection.size());
 		//displays the result
-		System.out.println("\nIt Matches: " + (jacquared) * 100 + " %");	
+		System.out.println("\nIt Matches: " + (jack) * 100 + " %");	
 
 	}
 
