@@ -30,7 +30,7 @@ public class Consumer implements Runnable {
 		pool = Executors.newFixedThreadPool(poolSize);
 		init();
 	}
-	//intialises specified number of minhashes 
+	//Initializes specified number of min-hashes 
 	public void init() {
 		Random random = new Random();
 		minhashes = new int[numOfMinH];
@@ -81,7 +81,7 @@ public class Consumer implements Runnable {
 		intersection.retainAll(map.get(2));
 		//the calculation which calculates the percentage 
 		float jacquared = (float)intersection.size()/(numOfMinH*2-(float)intersection.size());
-		
+		//displays the result
 		System.out.println("It Matches: " + (jacquared) * 100 + " %");
 	}
 }
